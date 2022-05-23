@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "start": "2022-05-01",
+        "end": "2022-05-04",
+        "reason": "Sick Leave"
+    },
+    {
+        "id": 2,
+        "start": "2022-03-05",
+        "end": "2022-03-06",
+        "reason": "Sick Leave"
+    },
+    {
+        "id": 3,
+        "start": "2022-01-01",
+        "end": "2022-01-02",
+        "reason": "Sick Leave"
+    }
+]
