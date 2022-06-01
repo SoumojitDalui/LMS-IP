@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/LMS-IP/static/css/main.e7720ab7.css",
-    "main.js": "/LMS-IP/static/js/main.c20b27f3.js",
+    "main.js": "/LMS-IP/static/js/main.326b96a5.js",
     "static/js/787.d0057543.chunk.js": "/LMS-IP/static/js/787.d0057543.chunk.js",
     "index.html": "/LMS-IP/index.html",
     "main.e7720ab7.css.map": "/LMS-IP/static/css/main.e7720ab7.css.map",
-    "main.c20b27f3.js.map": "/LMS-IP/static/js/main.c20b27f3.js.map",
+    "main.326b96a5.js.map": "/LMS-IP/static/js/main.326b96a5.js.map",
     "787.d0057543.chunk.js.map": "/LMS-IP/static/js/787.d0057543.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7720ab7.css",
-    "static/js/main.c20b27f3.js"
+    "static/js/main.326b96a5.js"
   ]
 }
