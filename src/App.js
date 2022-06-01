@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Home from './Components/Home'
@@ -9,16 +9,18 @@ import LeavesOfIndividual from './Components/LeavesOfIndividual';
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route path="emp" element={<Employee/>} />
-          <Route path="mnger" element={<Manager/>} />
-          <Route path="check" element={<LeavesOfIndividual/>} />
-        </Routes>
-      </div>
-    </Provider>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Provider store={store}>
+        <div className="App">
+          <Routes>
+            <Route exact path="/" element={<Home/>} />
+            <Route path="emp" element={<Employee/>} />
+            <Route path="mnger" element={<Manager/>} />
+            <Route path="check" element={<LeavesOfIndividual/>} />
+          </Routes>
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 }
 
