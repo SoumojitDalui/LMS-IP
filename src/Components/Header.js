@@ -23,10 +23,10 @@ function Header() {
         Leave Management System
         </Navbar.Brand>
       </div>
-      {localStorage.getItem('email') && window.location.href !== "http://localhost:3000/" ? 
+      {localStorage.getItem('role') && window.location.href !== "http://localhost:3000/" ? 
         <div style={{ marginLeft: 'auto' }}>
           <Navbar.Text>
-            {localStorage.getItem('name')} ({localStorage.getItem('role')})
+            {localStorage.getItem('role')}
           </Navbar.Text>
           <Navbar.Text style={{ marginLeft: "10px", marginRight: "10px" }}>
             <button type="button" className="btn btn-warning"><a href="#login" onClick={signOut} style={{ textDecoration: "none" }}>Sign Out</a></button>
