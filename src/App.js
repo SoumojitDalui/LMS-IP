@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Home from './Components/Home'
@@ -9,7 +9,7 @@ import LeavesOfIndividual from './Components/LeavesOfIndividual';
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Provider store={store}>
         <div className="App">
           <Routes>
@@ -20,7 +20,7 @@ function App() {
           </Routes>
         </div>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
