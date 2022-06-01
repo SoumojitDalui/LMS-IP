@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button, Offcanvas } from 'react-bootstrap';
 import { TreeView, TreeItem } from '@material-ui/lab';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -12,17 +12,20 @@ function SidebarBoot() {
   const showSidebar = () => setShow(true);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const goPage = (label) => {
-    if(localStorage.getItem('role') !== label && window.location.pathname !== '/check') {
+    if(localStorage.getItem('role') !== label && localStorage.getItem('nav') !== label ) {
       localStorage.setItem('nav', label);
       navigate('../check');
     }
-    else if (window.location.pathname === '/check' && localStorage.getItem('role') !== label) {
+
+    else if(localStorage.getItem('role') !== label && location.pathname === '/check') {
       localStorage.setItem('nav', label);
-      window.location.reload();
+      navigate('../check');
     }
-    else if (window.location.pathname === '/check' && localStorage.getItem('role') === label) {
+
+    else if (localStorage.getItem('role') === label && localStorage.getItem('nav') !== label) {
       if(localStorage.getItem('role') === 'Manager 1') {
         navigate('../mnger');
       }

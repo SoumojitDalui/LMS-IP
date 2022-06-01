@@ -1,12 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
 import { Navbar } from 'react-bootstrap'
 
 function Header() {
+  const navigate = useNavigate()
+
   function signOut() {
-    localStorage.removeItem('name')
-    localStorage.removeItem('email')
-    window.location.href = '/'
-}
+    localStorage.removeItem('role')
+    localStorage.removeItem('nav')
+    navigate('/')
+  }
 
   return (
     <Navbar bg="dark" variant="dark">
@@ -29,7 +32,7 @@ function Header() {
             {localStorage.getItem('role')}
           </Navbar.Text>
           <Navbar.Text style={{ marginLeft: "10px", marginRight: "10px" }}>
-            <button type="button" className="btn btn-warning"><a href="#login" onClick={signOut} style={{ textDecoration: "none" }}>Sign Out</a></button>
+            <button type="button" className="btn btn-warning" onClick={signOut}>Sign Out</button>
           </Navbar.Text>
         </div> : <></>}
     </Navbar>

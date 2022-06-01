@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import { useNavigate } from 'react-router-dom'
 import GoogleLogin from 'react-google-login'
 import USER from '../USER.json'
 import { Button, Card, Container } from 'react-bootstrap'
@@ -25,15 +26,18 @@ function Login() {
     //     console.log(response)
     // }
 
+    const navigate = useNavigate()
+
     const responseClick = (data) => {
       if(data === "employee") {
         localStorage.setItem('role', 'Employee 1')
-        window.location.href = 'emp'
+        navigate('/emp')
       } else if(data === "manager") {
         localStorage.setItem('role', 'Manager 1')
-        window.location.href = 'mnger'
+        navigate('/mnger')
       } else {
-        window.location.href = '/'
+        localStorage.removeItem('role')
+        navigate('/')
       }
     }
         
